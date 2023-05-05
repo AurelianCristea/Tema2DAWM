@@ -1,0 +1,51 @@
+
+nz-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+    color: #333;
+    
+     
+  }
+  
+  
+  nz-table thead th {
+    background-color: #eee;
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  
+  nz-table tbody td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  
+  nz-table tbody button {
+    background-color: #1890ff;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  
+  button[nz-button] {
+    background-color: #1890ff;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  parent-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+

@@ -1,0 +1,59 @@
+<button nz-button nzType="primary" (click)="showModal()">Add</button>
+
+<nz-table #table [nzData]="data">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Email</th>
+      <th>Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of table.data">
+      <td>{{ item.id}}</td>
+      <td>{{ item.name }}</td>
+      <td>{{ item.age }}</td>
+      <td>{{ item.email }}</td>
+      <td><button nz-button nzType="primary" (click)="editItem(item)">Edit</button></td>
+    </tr>
+  </tbody>
+</nz-table>
+
+
+<nz-modal [(nzVisible)]="isVisible" nzTitle="{{modalTitle}}" (nzOnCancel)="handleCancel()" (nzOnOk)="submitForm()">
+  <form nz-form [formGroup]="validateForm">
+    <div nz-row nzGutter="16">
+      <div nz-col nzSpan="24">
+        <nz-form-item>
+          <nz-form-label [nzSpan]="8" nzRequired>Name:</nz-form-label>
+          <nz-form-control [nzSpan]="16">
+            <input nz-input formControlName="name" placeholder="Enter Name">
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+    </div>
+    <div nz-row nzGutter="16">
+      <div nz-col nzSpan="24">
+        <nz-form-item>
+          <nz-form-label [nzSpan]="8" nzRequired>Age:</nz-form-label>
+          <nz-form-control [nzSpan]="16">
+            <input nz-input formControlName="age" placeholder="Enter Age">
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+    </div>
+    <div nz-row nzGutter="16">
+      <div nz-col nzSpan="24">
+        <nz-form-item>
+          <nz-form-label [nzSpan]="8" nzRequired>Email:</nz-form-label>
+          <nz-form-control [nzSpan]="16">
+            <input nz-input formControlName="email" placeholder="Enter Email">
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+    </div>
+  </form>
+</nz-modal>
+
